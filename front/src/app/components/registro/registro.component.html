@@ -1,0 +1,45 @@
+<section class="row">
+    <div class="col-6 offset-3">
+        <form class="p-5 carta" [formGroup]="usuarioForm" (ngSubmit)="crearUsuario()">
+            <div class="form__group field mb-3 w-100">
+                <input type="text" class="form__field w-100" placeholder="Nombres" id="nombres" required formControlName="nombres">
+                <label for="nombres" class="form__label">Nombres</label>
+            </div>
+            <div class="text-danger fw-lighter" *ngIf="usuarioForm.get('nombres')?.hasError('required') && usuarioForm.get('nombres')?.touched">Nombre invalido</div>
+
+            <div class="form__group field mb-3 w-100">
+                <input type="text" class="form__field w-100" placeholder="Apellidos" id="apellidos" required formControlName="apellidos">
+                <label for="apellidos" class="form__label">Apellidos</label>
+            </div>
+            <div class="text-danger fw-lighter" *ngIf="usuarioForm.get('apellidos')?.hasError('required') && usuarioForm.get('apellidos')?.touched">Apellido invalido</div>
+
+            <div class="form__group field mb-3 w-100">
+                <input type="number" class="form__field w-100" placeholder="Edad" id="edad" required formControlName="edad">
+                <label for="edad" class="form__label">Edad</label>
+            </div>
+            <div class="text-danger fw-lighter" *ngIf="usuarioForm.get('edad')?.hasError('required') && usuarioForm.get('edad')?.touched">Edad invalida</div>
+            <div class="text-danger fw-lighter" *ngIf="usuarioForm.get('edad')?.hasError('pattern') && usuarioForm.get('edad')?.touched">La edad debe ser un numero</div>
+
+            <div class=" form__group field mb-3 w-100">
+                <input type="email" class="form__field w-100" placeholder="Correo" id="correo" required formControlName="correo">
+                <label for="correo" class="form__label">Correo</label>
+            </div>
+            <div class="text-danger fw-lighter" *ngIf="usuarioForm.get('correo')?.hasError('required') && usuarioForm.get('correo')?.touched">Correo invalido</div>
+            <div class="text-danger fw-lighter" *ngIf="usuarioForm.get('correo')?.hasError('pattern') && usuarioForm.get('correo')?.touched">La estructura del correo no es valida</div>
+
+            <div class="form__group field mb-3 w-100">
+                <input type="password" class="form__field w-100" placeholder="Contraseña" id="password" required formControlName="password">
+                <label for="password" class="form__label">Contraseña</label>
+            </div>
+            <div class="text-danger fw-lighter" *ngIf="usuarioForm.get('password')?.hasError('required') && usuarioForm.get('password')?.touched">Contraseña invalida</div>
+
+            <div class="form__group field mb-3 w-100">
+                <input type="password" class="form__field w-100" placeholder="Verifique contraseña" id="passwordVer" required formControlName="passVerify">
+                <label for="passwordVer" class="form__label">Verifique contraseña</label>
+            </div>
+            <div class="text-danger fw-lighter" *ngIf="usuarioForm.get('passVerify')?.hasError('required') && usuarioForm.get('passVerify')?.touched">Contraseña invalida</div>
+
+            <button type="submit" class="btnIngreso w-100 mt-4">Ingresar</button>
+        </form>
+    </div>
+</section>

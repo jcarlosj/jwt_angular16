@@ -1,0 +1,31 @@
+<section>
+    <h2>Lista de usuarios</h2>
+    <div class="row">
+        <div class="col-12">
+            <table *ngIf="listaUsuarios.length > 0" class="table table-dark table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Rol</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of listaUsuarios">
+                        <td>{{ usuario.nombres +' '+ usuario.apellidos }}</td>
+                        <td>{{ usuario.edad }}</td>
+                        <td>{{ usuario.correo }}</td>
+                        <td>{{ usuario.rol }}</td>
+                        <td>
+                            <i [routerLink]="['/editar-producto', usuario._id]" class="fas fa-pen-square fs-4 mx-3"></i>
+                            <i (click)="eliminarProducto(usuario._id)" class="fas fa-trash fs-4 mx-3"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 class="text-center text-danger fw-bold" *ngIf="listaUsuarios.length == 0">No hay productos registrados</h2>
+        </div>
+    </div>
+</section>
