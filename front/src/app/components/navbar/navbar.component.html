@@ -11,12 +11,25 @@
                 <li class="nav-item">
                     <a class="nav-link fw-bold" routerLink="/inicio" routerLinkActive="text-white">Inicio</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        EJemplos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><b class="ms-3">Scroll</b></li>
+                        <li><a class="dropdown-item" routerLink="range-scroll1">Range Scroll 1</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item" *ngIf="_usuarioService.estaLogueado();">
                     <a class="nav-link fw-bold" routerLink="/admin" routerLinkActive="text-white">Administración</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <ng-container *ngIf="!_usuarioService.estaLogueado; else logOut">
+                <ng-container *ngIf="!_usuarioService.estaLogueado(); else logOut">
                     <li class="nav-item">
                         <a class="nav-link fw-bold" routerLink="/registro" routerLinkActive="text-white">Registro</a>
                     </li>

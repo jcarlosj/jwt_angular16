@@ -16,6 +16,7 @@ import { ServerUsuariosComponent } from './components/admin/usuarios/server-usua
 import { VistaUsuariosComponent } from './components/admin/usuarios/vista-usuarios/vista-usuarios.component';
 import { AdministracionComponent } from './components/admin/administracion/administracion.component';
 import { Error404Component } from './components/error404/error404.component';
+import { RangeScroll1Component } from './components/ejmplos/range-scroll1/range-scroll1.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { Error404Component } from './components/error404/error404.component';
         VistaUsuariosComponent,
         AdministracionComponent,
         Error404Component,
+        RangeScroll1Component,
     ],
     imports: [
         BrowserModule,

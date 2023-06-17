@@ -1,0 +1,8 @@
+<h1>{{ contador }}</h1>
+<!-- <button (click)="incrementarContador()">Incrementar</button> -->
+<input type="range" name="price" id="price" min="0" max="{{heightDiv}}" [(ngModel)]="sliderValue" (input)="incrementarContador()">
+
+<div class="divScroll" [style.height]="heightDiv != null ? heightDiv+'px' : ''" [scrollTop]="contador">
+    <!-- [scrollLeft]="contador" -->
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum id aut molestiae, voluptatum, officiis soluta, alias nesciunt doloribus ut in necessitatibus eligendi eos eveniet repudiandae perspiciatis odit hic explicabo aspernatur.
+</div>

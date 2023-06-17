@@ -7,6 +7,7 @@ import { AdministracionComponent } from './components/admin/administracion/admin
 import { autenticacionGuard } from './guards/autenticacion.guard';
 import { Error404Component } from './components/error404/error404.component';
 import { VistaUsuariosComponent } from './components/admin/usuarios/vista-usuarios/vista-usuarios.component';
+import { RangeScroll1Component } from './components/ejmplos/range-scroll1/range-scroll1.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'inicio' , pathMatch:'full' },
@@ -16,6 +17,9 @@ const routes: Routes = [
     { path: 'admin', canMatch:[autenticacionGuard],  component: AdministracionComponent },
     { path: 'admin/gestion-usuarios', canMatch:[autenticacionGuard],  component: VistaUsuariosComponent },
     { path: '404', component: Error404Component },
+    //INICIO EJEMPLOS
+    { path: 'range-scroll1', component: RangeScroll1Component },
+    //FIN EJEMPLOS
     { path: '**', pathMatch: 'full', redirectTo: '404' }
 ];
 
